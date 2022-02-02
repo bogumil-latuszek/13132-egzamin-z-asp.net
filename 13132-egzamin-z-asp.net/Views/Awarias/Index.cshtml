@@ -1,0 +1,53 @@
+﻿@model IEnumerable<_13132_egzamin_z_asp.net.Models.Awaria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.miejsce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nrUrzadzenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataZgloszenia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.miejsce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nrUrzadzenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataZgloszenia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AwariaID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AwariaID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AwariaID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
